@@ -1,0 +1,7 @@
+CREATE TABLE checkins (
+checkin_id SERIAL PRIMARY KEY,
+user_id UUID REFERENCES users(user_id) ON DELETE CASCADE,
+facility_id INT REFERENCES facilities(facility_id) ON DELETE SET NULL,
+checkin_time TIMESTAMP DEFAULT NOW(),
+method VARCHAR(20) CHECK (method IN ('qr', 'manual', 'staff_scan')),
+);
