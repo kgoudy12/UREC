@@ -1,0 +1,10 @@
+
+create table facilities (
+facility_id SERIAL PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+qr_id VARCHAR(100) UNIQUE NOT NULL, -- used for QR check in
+location VARCHAR(150),
+capacity INT,
+open_time TIME,
+clase_time TIME
+);
